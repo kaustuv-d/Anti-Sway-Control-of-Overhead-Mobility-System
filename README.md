@@ -2,6 +2,7 @@
 
 This repository contains the design, implementation, and testing of an **Anti-Sway Control System** developed as part of the **Instrumentation and Control Systems** course at **Indian Institute of Technology Indore**. The project focuses on stabilizing suspended payloads using a real-time PID control mechanism integrated with a custom-built H-belt drive system.
 
+Complete [Report](https://github.com/kaustuv-d/Anti-Sway-Control-of-Overhead-Mobility-System/blob/main/Report-iit.pdf) for detailed methodology, implementation diagrams, and validation results.
 ---
 
 ## Abstract
