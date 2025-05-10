@@ -1,4 +1,4 @@
-#  Anti-Sway Control System for Suspended Payloads
+#  Anti-Sway Control System for Overhead Mobility Systems
 
 This repository contains the design, implementation, and testing of an **Anti-Sway Control System** developed as part of the **Instrumentation and Control Systems** course at **Indian Institute of Technology Indore**. The project focuses on stabilizing suspended payloads using a real-time PID control mechanism integrated with a custom-built H-belt drive system.
 
