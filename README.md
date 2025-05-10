@@ -9,6 +9,9 @@ Complete [Report](https://github.com/kaustuv-d/Anti-Sway-Control-of-Overhead-Mob
 
 The project aims to reduce sway in suspended payloads (like crane systems) by applying corrective actions using a **PID controller**. The controller reads angular displacement via an **MPU-6050** sensor and drives **stepper motors** to reposition the suspension point using an **H-belt drive mechanism**. The system is capable of reducing oscillations by up to **90%**, improving safety and operational efficiency in suspended load systems.
 
+
+![skew-control](ct-sway-skew-control_resized.png)
+
 ---
 
 ## Components Used
@@ -23,7 +26,7 @@ The project aims to reduce sway in suspended payloads (like crane systems) by ap
 
 ---
 
-## ⚙️ Control System
+## Control System
 
 ### PID Controller Design
 
@@ -35,16 +38,17 @@ u(t) = Kp * e(t) + Ki * integral(e(t)) + Kd * derivative(e(t))
 
 Each axis (roll and pitch) is controlled using separate PID loops. Parameters were tuned using the **Ziegler-Nichols method** followed by iterative refinement.
 
+![physicalcalc](math-schematic.png)
+
 ---
 
-## 🛠️ Implementation Details
+## Implementation Details
 
 ### 1. Sensor and Hardware Integration
 
 * The **MPU-6050** sensor is rigidly mounted on the payload using a custom 3D-printed bracket to reduce measurement errors.
 * Sensor data is transmitted to the Arduino Uno via **I2C** protocol for real-time control.
 
-![MPU-6050 Mounted on Payload](media/mpu_mount.jpg)
 
 ### 2. Angle Estimation using Complementary Filter
 
@@ -66,7 +70,7 @@ angle = alpha * (gyro_angle) + (1 - alpha) * (accel_angle);
 * The motors drive a **continuous H-pattern belt** that translates PID commands to **X-Y movement** of the suspension point.
 * Stepper motors are operated with **1/16 microstepping**, giving a high linear resolution (\~6.25µm/microstep).
 
-![H-Belt Drive Schematic](media/hbelt_diagram.png)
+![H-Belt Drive Schematic](H-belt-mechanism.png)
 
 * **Kinematics**:
 
@@ -100,6 +104,8 @@ angle = alpha * (gyro_angle) + (1 - alpha) * (accel_angle);
 * **Sway reduction up to 90%** compared to uncontrolled motion
 * Stable damping and smooth transition between manual and automatic control
 
+![setup full](Overall-Setup-payload.png)
+
 ---
 
 ## Future Improvements
@@ -132,9 +138,9 @@ angle = alpha * (gyro_angle) + (1 - alpha) * (accel_angle);
 
 ## 👥 Team Members
 
-* Kaustuv Devmishra
-* Kshitij Shetty
-* Prachi Patil
-* Mihir Hemani
-* Jatin Joshi
-* Krishan Swami
+* Kaustuv Devmishra (Mechanical Engineering Dept., IIT Indore)
+* Kshitij Shetty (Mechanical Engineering Dept., IIT Indore)
+* Prachi Patil (Mechanical Engineering Dept., IIT Indore)
+* Mihir Hemani (Mechanical Engineering Dept., IIT Indore)
+* Jatin Joshi (Mechanical Engineering Dept., IIT Indore)
+* Krishan Swami (Mechanical Engineering Dept., IIT Indore)
